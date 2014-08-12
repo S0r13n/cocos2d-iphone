@@ -131,6 +131,6 @@ Pod::Spec.new do |s|
 
   # s.requires_arc = true
   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)/Headers/cocos2d/Chipmunk/include/ $(PODS_ROOT)/Headers/cocos2d/Chipmunk/objectivec/include/" }
-  s.dependency "ObjectAL-for-iPhone", "~> 1.4"
+  s.dependency "ObjectAL-for-iPhone", "~> 2.4"
 
 end
