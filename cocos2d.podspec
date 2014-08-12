@@ -137,11 +137,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'ObjectiveChipmunk' do |p|
-  	p.name = "ObjectiveChipmunk"
   	p.requires_arc = false
     p.source_files =  "external/Chipmunk/src/**/*.{c,h}","external/Chipmunk/include/**/*.{c,h}","external/Chipmunk/objectivec/**/*.{m,h}","external/Chipmunk/objectivec/src/*.{m,h}"
-    p.public_header_files = "external/Chipmunk/include/**/*.h","external/Chipmunk/objectivec/include/**/*.h","external/Chipmunk/xcode/libGLEW/include/**/*.h","external/Chipmunk/xcode/libglfw/include/**/*.h"
-    p.header_mappings_dir": "external"
-    s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)/Headers/cocos2d/Chipmunk/include/ $(PODS_ROOT)/Headers/cocos2d/Chipmunk/objectivec/include/" }
   end
 end
