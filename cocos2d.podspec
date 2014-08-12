@@ -64,11 +64,11 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
+  s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+  s.ios.deployment_target = "5.0"
   # s.osx.deployment_target = "10.7"
 
 
@@ -133,4 +133,6 @@ Pod::Spec.new do |s|
   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)/Headers/cocos2d/Chipmunk/include/ $(PODS_ROOT)/Headers/cocos2d/Chipmunk/objectivec/include/" }
   s.dependency "ObjectAL-for-iPhone", "~> 2.4"
 
+
+  s.requires_arc = true
 end
