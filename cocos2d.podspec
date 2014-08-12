@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "cocos2d-iphone"
+  s.name         = "cocos2d"
   s.version      = "3.1.1"
   s.summary      = "cocos2d for iOS and OS X, built using Objective-C"
 
