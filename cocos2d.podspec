@@ -63,13 +63,12 @@ Pod::Spec.new do |s|
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
-
-  s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  
+  #s.platform     = :ios, "5.1.1"
 
   #  When using multiple platforms
-  s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
+  s.ios.deployment_target = "5.1.1"
+  s.osx.deployment_target = "10.8"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,6 +91,8 @@ Pod::Spec.new do |s|
   s.source_files  = "cocos2d/*.{h,m,c}","cocos2d/Support/*.{h,m,c}","cocos2d/Platforms/**/*.{h,m,c}","cocos2d-ui/**/*.{h,m,c}"
     
   s.exclude_files = "Classes/Exclude"
+
+  s.header_mappings_dir = 'cocos2d'
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -133,6 +134,14 @@ Pod::Spec.new do |s|
   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)/Headers/cocos2d/Chipmunk/include/ $(PODS_ROOT)/Headers/cocos2d/Chipmunk/objectivec/include/" }
   s.dependency "ObjectAL-for-iPhone", "~> 2.4"
 
-
   s.requires_arc = true
+  
+  s.subspec 'ObjectiveChipmunk' do |p|
+  	p.name = "ObjectiveChipmunk"
+  	p.requires_arc = false
+    p.source_files =  "external/Chipmunk/src/**/*.{c,h}","external/Chipmunk/include/**/*.{c,h}","external/Chipmunk/objectivec/**/*.{m,h}","external/Chipmunk/objectivec/src/*.{m,h}"
+    p.public_header_files = "external/Chipmunk/include/**/*.h","external/Chipmunk/objectivec/include/**/*.h","external/Chipmunk/xcode/libGLEW/include/**/*.h","external/Chipmunk/xcode/libglfw/include/**/*.h"
+    p.header_mappings_dir": "external"
+    s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)/Headers/cocos2d/Chipmunk/include/ $(PODS_ROOT)/Headers/cocos2d/Chipmunk/objectivec/include/" }
+  end
 end
